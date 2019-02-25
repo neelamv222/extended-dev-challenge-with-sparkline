@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script src="stomp.js"></script>
+        <script src="sparkline.js"></script>
+    </head>
+    <body>
+        <section>
+            <span id="example-sparkline"></span>
+            <h1 id="example-sparkline" >Updating Table</h1>
+			<!--Table display Start-->
+            <table class="currencyTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Current Best Ask Price</th>
+                        <th>Current Best Bid Price</th>
+                        <th>Best Ask Price Last Changed</th>
+                        <th>Best Bid Last Changed</th>
+                        <th>Spark Lines</th>
+                    </tr>
+                </thead>
+                <tbody id="currencyTbody"></tbody>
+            </table>
+            <!--Table display End-->
+            <section>
+                <h2>Understanding and Assumptions:</h2>
+                <h3>Assignments consist of two parts:</h3>
+                <div>Part 1: <b> A Sorted table:</b>
+					<p> According to my understanding in Part 1 which is "Sorted Table" we have to show currency pairs in a table with a single row for each unique currency pair and include columns for the following</p>
+                    <ol>
+						<li> Name</li>
+						<li> the current best bid price</li>
+						<li> current best ask price</li>
+						<li> the amount that the best bid last changed</li>
+						<li> the amount the best price last changed</li>
+					<ol>
+                </div>
+                <div>
+                    <p>So I did the following in <b>part 1</b>:</p>
+                    <ul>
+                        <li>Firstly, remove the duplicate currency pair and show only the one with highest "best bid last changed" value.</li>
+                        <li>After this, sort above result set again based on the "best bid last changed" in descending order </li>
+                    </ul>
+                </div>
+                <div>Part 2: <b>Sparkline:</b>
+                   <p> In the second part, we have to draw a graph (sparkline) in the last column for each row.
+                    So, <b> my graph (sparkline) will get display on the screen after 30 secs. And thereafter, the graph will keep on updating over the most recent data that comes from the server.</b>
+                    The sparkline is calculated as the midprice over the 30 seconds. 
+                    The midprice is calculated by adding the bestBid and bestAsk fields together and dividing by 2 as mentioned in the assignment.</p>
+                </div>
+				<p>In order to visit task page <a href="task.html" alt="task Page">Click Here</a></p>
+            </section>
+        </section>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+        <script src="bundle.js"></script>
+    </body>
+</html>
